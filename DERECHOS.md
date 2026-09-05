@@ -25,7 +25,7 @@ aviso de copyright.
 **No están cubiertas por la licencia MIT** y **no pueden reutilizarse** sin
 autorización escrita previa:
 
-- Todas las imágenes de `capturas/`.
+- Todas las imágenes de `capturas/`, incluidas las láminas de `capturas/diseno/`.
 - El logotipo "Arte de hoy" y cualquier obra artística visible en ellas.
 
 ### Por qué

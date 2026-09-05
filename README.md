@@ -36,6 +36,31 @@ puede compartir por fuera de la plataforma.
 
 ---
 
+## Diseño gráfico
+
+Toda la gráfica de la academia es obra de **Carola Arriagada**: el logotipo, la
+identidad visual, los botones y cada pieza que se ve en el sitio y en la
+plataforma.
+
+**El logo.** Pintado a mano: salpicaduras de acuarela en cinco colores, los aros y
+la caligrafía. Para la animación de la portada se descompuso en sus piezas
+originales, que son estas.
+
+![El logo y sus cinco piezas](capturas/diseno/01-logo-y-piezas.png)
+
+**Los botones.** En vez de botones de sistema, once botones pintados uno por
+uno, con la misma acuarela del logo. Son los que se usan en todo el sitio y en
+la plataforma.
+
+![Los once botones pintados a mano](capturas/diseno/02-botones-pintados.png)
+
+**La identidad.** El nombre en su tipografía y la paleta de colores, que sale
+del propio logo.
+
+![Nombre y paleta](capturas/diseno/03-identidad.png)
+
+---
+
 ## Detalles que valen
 
 ### Streaming adaptativo (HLS): el video se ve bien aunque la conexión sea mala
