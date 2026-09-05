@@ -11,31 +11,6 @@ video, pagos e infraestructura.
 
 ---
 
-## Cómo está armado
-
-```mermaid
-flowchart LR
-    A[Alumna] -->|HTTPS| N[nginx<br/>servidor propio]
-    N --> S[Sitio público<br/>HTML · CSS · JS]
-    N --> P[Plataforma de cursos<br/>Flask + gunicorn]
-    P --> D[(Base de alumnas<br/>y avances)]
-    P --> M[(Pasarelas de pago)]
-    N -->|enlace firmado| R[Almacenamiento de objetos<br/>videos e imágenes]
-    C[Conversión a streaming adaptativo<br/>HLS · ffmpeg, en segundo plano] --> R
-```
-
-**El sitio público** es estático: HTML, CSS y JavaScript escritos a mano. Sin
-framework, sin dependencias, sin nada que actualizar.
-
-**La plataforma** es una aplicación Flask con cuentas de alumnas, inscripción a
-cursos, seguimiento del avance, certificados y un panel de administración.
-
-**El video** no se sirve desde el servidor. Vive en almacenamiento de objetos y
-se entrega mediante enlaces firmados que caducan, de modo que un video no se
-puede compartir por fuera de la plataforma.
-
----
-
 ## Diseño gráfico
 
 Toda la gráfica de la academia es obra de **Carola Arriagada**: el logotipo, la
@@ -58,6 +33,31 @@ la plataforma.
 del propio logo.
 
 ![Nombre y paleta](capturas/diseno/03-identidad.png)
+
+---
+
+## Cómo está armado
+
+```mermaid
+flowchart LR
+    A[Alumna] -->|HTTPS| N[nginx<br/>servidor propio]
+    N --> S[Sitio público<br/>HTML · CSS · JS]
+    N --> P[Plataforma de cursos<br/>Flask + gunicorn]
+    P --> D[(Base de alumnas<br/>y avances)]
+    P --> M[(Pasarelas de pago)]
+    N -->|enlace firmado| R[Almacenamiento de objetos<br/>videos e imágenes]
+    C[Conversión a streaming adaptativo<br/>HLS · ffmpeg, en segundo plano] --> R
+```
+
+**El sitio público** es estático: HTML, CSS y JavaScript escritos a mano. Sin
+framework, sin dependencias, sin nada que actualizar.
+
+**La plataforma** es una aplicación Flask con cuentas de alumnas, inscripción a
+cursos, seguimiento del avance, certificados y un panel de administración.
+
+**El video** no se sirve desde el servidor. Vive en almacenamiento de objetos y
+se entrega mediante enlaces firmados que caducan, de modo que un video no se
+puede compartir por fuera de la plataforma.
 
 ---
 
