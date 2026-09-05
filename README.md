@@ -229,6 +229,7 @@ firma en su lugar.
 | Medios | Almacenamiento de objetos compatible con S3 |
 | Pagos | Mercado Pago (Argentina y Chile) y PayPal (resto del mundo) |
 | Servidor | Una máquina virtual chica en Santiago de Chile |
+| Infraestructura | Laboratorio propio con KVM para desarrollar y probar; producción en la nube. Caso de estudio aparte: [infraestructura-druidatech](https://github.com/druidatech-net/infraestructura-druidatech) |
 
 El servidor cuesta menos de doce dólares por mes y aloja varios sitios a la vez.
 El costo no crece con la cantidad de alumnas.
