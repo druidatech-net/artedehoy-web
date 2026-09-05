@@ -1,5 +1,5 @@
 /* Animación de formación del logo Arte de Hoy — piezas originales de Carola.
-   Generado por DruidaTech (Gustavo) 26/8/2026. El final es logocompleto exacto. */
+   DruidaTech, 26/8/2026. El final es logocompleto exacto. */
 (() => {
 const cont = document.getElementById('logoAnim');
 if(!cont) return;
