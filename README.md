@@ -10,21 +10,7 @@ punta a punta: front, backend, video, pagos e infraestructura.
 
 ---
 
-## Qué problema resuelve
-
-Una academia online que arranca tiene dos caminos. Alquilar una plataforma de
-cursos, que cobra una mensualidad fija más una comisión por cada venta, o armar
-la suya. La primera opción se lleva una parte del ingreso desde el primer día y
-además se queda con la relación con las alumnas.
-
-Se eligió el segundo camino, con tres condiciones: que el video se vea fluido
-también en un teléfono con mala conexión, que la persona que da los cursos pueda
-administrar todo sola sin saber de tecnología, y que el costo mensual no dependa
-de cuántas alumnas haya.
-
----
-
-## Cómo está resuelto
+## Cómo está armado
 
 ```mermaid
 flowchart LR
