@@ -14,6 +14,7 @@ Está bajo [licencia MIT](LICENSE) el código de DruidaTech, escrito por Edgardo
 - `codigo/generar-animacion.py`
 - `codigo/cocina-hls.sh`
 - `codigo/style.css`
+- `codigo/entrega-firmada.py`
 
 Puedes usarlo, modificarlo y reutilizarlo, incluso comercialmente, conservando el
 aviso de copyright.

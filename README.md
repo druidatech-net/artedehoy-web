@@ -109,6 +109,44 @@ quedarse cargando.
 En la casa se le dice "cocina" a ese proceso, porque recibe el video crudo y lo
 deja listo para servir. De ahí el nombre del archivo.
 
+### El reservorio de videos y cómo se cuida
+
+Las clases son el producto. Si un video pago se puede compartir con un enlace,
+el negocio se vacía. Así está resuelto:
+
+```mermaid
+flowchart LR
+    A[Alumna] -->|pide un video| P[Plataforma<br/>¿está inscripta en este curso?]
+    P -->|no| X[403]
+    P -->|sí| F[Enlace firmado<br/>vence a las 6 h]
+    F --> R[(Depósito privado<br/>almacenamiento de objetos)]
+    R -->|fragmentos| A
+    R -.->|copia cada 5 min| B[(Respaldo<br/>fuera de la nube)]
+```
+
+- **No hay direcciones fijas.** Los videos viven en un depósito privado, fuera
+  del servidor web. Ninguna dirección pública apunta a un video.
+- **Cada pedido se autoriza.** La plataforma verifica que quien pide esté
+  inscripta en ese curso. La regla es una sola y vale igual para el video
+  original y para cada lista de fragmentos del streaming adaptativo.
+- **Los enlaces vencen.** Lo que recibe el reproductor son enlaces firmados
+  válidos por seis horas. La lista de fragmentos se reescribe al vuelo para que
+  cada fragmento lleve su propia firma. Compartirlos no sirve al rato.
+- **El servidor web no carga con el video.** Una vez autorizado, cada fragmento
+  viaja del depósito al reproductor directamente.
+- **Los originales no se sirven.** Se entrega la versión convertida; el original
+  queda guardado y solo se usa mientras la conversión no terminó.
+- **Los intentos de ingreso están limitados** por dirección, en el servidor,
+  antes de llegar a la aplicación.
+- **Todo tiene copia.** El depósito se replica cada cinco minutos en una máquina
+  fuera de la nube, y la base de alumnas todos los días, con treinta días de
+  historia.
+
+Lo que no hay, para ser claros: DRM. Nada impide que alguien grabe la pantalla.
+El objetivo es otro: que compartir un enlace no sirva y que los originales nunca
+queden expuestos. El código de esa entrega está en
+[`codigo/entrega-firmada.py`](codigo/entrega-firmada.py).
+
 ### El logo se dibuja solo
 
 La portada no muestra una imagen del logo: lo forma delante de quien mira. Las
@@ -210,6 +248,7 @@ código propio:
 | [`codigo/generar-animacion.py`](codigo/generar-animacion.py) | Arma la animación a partir de esas piezas |
 | [`codigo/cocina-hls.sh`](codigo/cocina-hls.sh) | Convierte cada video a tres calidades en fragmentos (HLS), para que el reproductor se adapte a la conexión |
 | [`codigo/style.css`](codigo/style.css) | La hoja de estilos del sitio, escrita a mano |
+| [`codigo/entrega-firmada.py`](codigo/entrega-firmada.py) | Extracto de la entrega de video: autorización por pedido y enlaces firmados que vencen |
 
 No incluye la plataforma de cursos, los pagos, el panel de administración ni nada
 que toque datos de alumnas.
