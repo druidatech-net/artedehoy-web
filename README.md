@@ -153,12 +153,12 @@ La portada no muestra una imagen del logo: lo forma delante de quien mira. Las
 salpicaduras de pintura caen una por una, después se escribe la caligrafía y se
 trazan los aros.
 
-Para lograrlo hubo que descomponer el logo original en once piezas exactas
-mediante análisis de píxeles, y verificar que apiladas reconstruyeran el archivo
-original con un error máximo de menos de un punto sobre doscientos cincuenta y
-cinco, es decir, invisible. La animación corre sobre canvas y respeta la
-preferencia del sistema de reducir movimiento: quien la tenga activada ve el
-logo quieto.
+Se partió de las piezas originales del diseño, las que se ven en la sección de
+diseño gráfico: las cinco manchas de color, la caligrafía y los aros. Se verificó
+que, apiladas, reconstruyen el logo exacto, píxel por píxel: lo que queda en
+pantalla al final es el logo de la artista, no una imitación. La animación corre
+sobre canvas y respeta la preferencia del sistema de reducir movimiento: quien la
+tenga activada ve el logo quieto.
 
 El código está en [`codigo/logo-anim.js`](codigo/logo-anim.js) y las herramientas
 que fabricaron las piezas, en [`codigo/`](codigo/).
