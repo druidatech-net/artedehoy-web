@@ -202,10 +202,10 @@ Todo eso se ve en la web en vivo, que es donde corresponde.
 
 ## Créditos
 
-- **Diseño gráfico: Carola Arriagada.** El logotipo y su animación, la identidad
+- **Diseño gráfico: Carola Arriagada.** El logotipo, la identidad
   visual, los botones pintados a mano y toda la gráfica del sitio y de la
   plataforma.
-- **Desarrollo técnico: Edgardo Rodríguez.** Front, backend, video, pagos,
+- **Desarrollo técnico: Edgardo Rodríguez.** Front, backend, animación del logo, video, pagos,
   correos automáticos e infraestructura.
 
 ---
