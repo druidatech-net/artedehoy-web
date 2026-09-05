@@ -1,8 +1,9 @@
 # Artedehoy — sitio y plataforma de cursos
 
 Sitio web y plataforma de cursos en video para una academia de arte y meditación.
-Proyecto personal, en producción y con alumnas reales. Diseñado y construido de
-punta a punta: front, backend, video, pagos e infraestructura.
+Proyecto personal, en producción. Diseño gráfico de **Carola Arriagada**;
+desarrollo técnico de **Edgardo Rodríguez**, de punta a punta: front, backend,
+video, pagos e infraestructura.
 
 **En vivo:** [artedehoyacademia.com](https://artedehoyacademia.com)
 
@@ -199,6 +200,16 @@ Todo eso se ve en la web en vivo, que es donde corresponde.
 
 ---
 
+## Créditos
+
+- **Diseño gráfico: Carola Arriagada.** El logotipo y su animación, la identidad
+  visual, los botones pintados a mano y toda la gráfica del sitio y de la
+  plataforma.
+- **Desarrollo técnico: Edgardo Rodríguez.** Front, backend, video, pagos,
+  correos automáticos e infraestructura.
+
+---
+
 ## Derechos
 
 El código de este repositorio está bajo [licencia MIT](LICENSE). Esa licencia cubre únicamente el código.
@@ -209,4 +220,4 @@ con su autorización, solo para ilustrar este trabajo. Ver [DERECHOS.md](DERECHO
 
 Código © 2026 DruidaTech (Edgardo Rodríguez) · Obra artística © Carola Arriagada
 
-Construido por **Edgardo Rodríguez** · [DruidaTech](https://druidatech.net)
+Diseño gráfico **Carola Arriagada** · Desarrollo técnico **Edgardo Rodríguez** · [DruidaTech](https://druidatech.net)
