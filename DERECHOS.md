@@ -7,7 +7,7 @@ Lee esto antes de copiar cualquier cosa.
 
 ## 1. Código fuente — licencia MIT
 
-Está bajo [licencia MIT](LICENSE) el código escrito por Edgardo Rodríguez:
+Está bajo [licencia MIT](LICENSE) el código de DruidaTech, escrito por Edgardo Rodríguez:
 
 - `codigo/logo-anim.js`
 - `codigo/descomponer-logo.py`
@@ -62,4 +62,4 @@ Para usar cualquier imagen, el logotipo o la marca, escribe a
 
 ---
 
-Código © 2026 Edgardo Rodríguez · Obra artística e imágenes © Carola Arriagada
+Código © 2026 DruidaTech (Edgardo Rodríguez) · Obra artística e imágenes © Carola Arriagada

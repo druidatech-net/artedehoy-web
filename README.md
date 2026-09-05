@@ -221,6 +221,6 @@ Las capturas de pantalla, el logotipo y la obra artística **no** lo están:
 son de Carola Arriagada y conservan todos los derechos reservados. Se publican
 con su autorización, solo para ilustrar este trabajo. Ver [DERECHOS.md](DERECHOS.md).
 
-Código © 2026 Edgardo Rodríguez · Obra artística © Carola Arriagada
+Código © 2026 DruidaTech (Edgardo Rodríguez) · Obra artística © Carola Arriagada
 
 Construido por **Edgardo Rodríguez** · [DruidaTech](https://druidatech.net)
