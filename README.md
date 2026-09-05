@@ -215,7 +215,7 @@ Todo eso se ve en la web en vivo, que es donde corresponde.
 
 ## Derechos
 
-El código de este repositorio está bajo [licencia MIT](LICENSE).
+El código de este repositorio está bajo [licencia MIT](LICENSE). Esa licencia cubre únicamente el código.
 
 Las capturas de pantalla, el logotipo y la obra artística **no** lo están:
 son de Carola Arriagada y conservan todos los derechos reservados. Se publican
