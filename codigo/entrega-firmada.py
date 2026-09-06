@@ -127,5 +127,5 @@ def existe_en_la_base(ruta):
 
 
 def autorizado(ruta):
-    """¿La persona con sesión iniciada está inscripto en el curso de ese archivo?"""
+    """¿La persona con sesión iniciada está inscripta en el curso de ese archivo?"""
     raise NotImplementedError
