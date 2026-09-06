@@ -40,10 +40,10 @@ del propio logo.
 
 ```mermaid
 flowchart LR
-    A[Alumna] -->|HTTPS| N[nginx<br/>servidor propio]
+    A[Alumno] -->|HTTPS| N[nginx<br/>servidor propio]
     N --> S[Sitio público<br/>HTML · CSS · JS]
     N --> P[Plataforma de cursos<br/>Flask + gunicorn]
-    P --> D[(Base de alumnas<br/>y avances)]
+    P --> D[(Base de alumnos<br/>y avances)]
     P --> M[(Pasarelas de pago)]
     N -->|enlace firmado| R[Almacenamiento de objetos<br/>videos e imágenes]
     C[Conversión a streaming adaptativo<br/>HLS · ffmpeg, en segundo plano] --> R
@@ -52,7 +52,7 @@ flowchart LR
 **El sitio público** es estático: HTML, CSS y JavaScript escritos a mano. Sin
 framework, sin dependencias, sin nada que actualizar.
 
-**La plataforma** es una aplicación Flask con cuentas de alumnas, inscripción a
+**La plataforma** es una aplicación Flask con cuentas de alumnos, inscripción a
 cursos, seguimiento del avance, certificados y un panel de administración.
 
 **El video** no se sirve desde el servidor. Vive en almacenamiento de objetos y
@@ -65,7 +65,7 @@ puede compartir por fuera de la plataforma.
 
 ### Streaming adaptativo (HLS): el video se ve bien aunque la conexión sea mala
 
-Es el problema central de una academia en video: la alumna que mira desde el
+Es el problema central de una academia en video: el alumno que mira desde el
 celular, con datos del teléfono o un wifi flojo, no puede quedarse esperando a
 que cargue. Y la que tiene buena conexión no tiene por qué verlo en baja calidad.
 
@@ -88,7 +88,7 @@ flowchart LR
 
 **Cómo funciona.** Cuando se sube un video, un proceso lo convierte a tres
 calidades (1080p, 720p y 480p) y corta cada una en pedazos de seis segundos. El
-reproductor de la alumna mide cuánto tarda en llegar cada pedazo. Si la conexión es buena, pide los de 1080p. Si se pone lenta, pasa a
+reproductor de el alumno mide cuánto tarda en llegar cada pedazo. Si la conexión es buena, pide los de 1080p. Si se pone lenta, pasa a
 720p o 480p sin cortar la reproducción, y vuelve a subir cuando mejora. En un
 teléfono con señal pobre el video arranca igual, en calidad baja, en vez de
 quedarse cargando.
@@ -116,7 +116,7 @@ el negocio se vacía. Así está resuelto:
 
 ```mermaid
 flowchart LR
-    A[Alumna] -->|pide un video| P[Plataforma<br/>¿está inscripta en este curso?]
+    A[Alumno] -->|pide un video| P[Plataforma<br/>¿está inscripto en este curso?]
     P -->|no| X[403]
     P -->|sí| F[Enlace firmado<br/>vence a las 6 h]
     F --> R[(Depósito privado<br/>almacenamiento de objetos)]
@@ -139,7 +139,7 @@ flowchart LR
 - **Los intentos de ingreso están limitados** por dirección, en el servidor,
   antes de llegar a la aplicación.
 - **Todo tiene copia.** El depósito se replica cada cinco minutos en una máquina
-  fuera de la nube, y la base de alumnas todos los días, con treinta días de
+  fuera de la nube, y la base de alumnos todos los días, con treinta días de
   historia.
 
 Lo que no hay, para ser claros: DRM. Nada impide que alguien grabe la pantalla.
@@ -176,21 +176,21 @@ plataforma solo recibe la confirmación.
 
 ### Todo lo que pasa se avisa solo
 
-Nueve situaciones distintas disparan un correo automático, a la alumna o a la
+Nueve situaciones distintas disparan un correo automático, a el alumno o a la
 dueña de la academia: cuenta creada, pago confirmado o rechazado, inscripción
 por transferencia iniciada, certificado emitido, reembolso pedido y reembolso
 procesado, mensaje de contacto recibido, y acceso de regalo enviado con una
-clave provisoria. La alumna también recupera su contraseña sola, con un enlace
+clave provisoria. El alumno también recupera su contraseña sola, con un enlace
 que caduca, sin que nadie tenga que intervenir.
 
 ### Cuidados que no se ven
 
 - Los intentos de ingreso están limitados por dirección: quien insiste con
   contraseñas queda frenado por el servidor antes de llegar a la aplicación.
-- La base de alumnas se copia todos los días, sola, a otra máquina.
+- La base de alumnos se copia todos los días, sola, a otra máquina.
 - Los videos nunca se sirven por una dirección fija: cada enlace se firma y
   caduca, así que compartirlo no sirve de nada al rato.
-- Una alumna puede pedir un reembolso desde su propia cuenta, y el pedido le
+- Un alumno puede pedir un reembolso desde su propia cuenta, y el pedido le
   llega a la dueña con todos los datos para resolverlo.
 
 ### Un panel para alguien que no es técnico
@@ -202,7 +202,7 @@ son cuatro botones, no cuatro pantallas de configuración.
 ### Certificados
 
 Al terminar un curso, la plataforma genera el certificado con el nombre de la
-alumna sobre el diseño original de la academia, con la letra manuscrita y la
+alumno sobre el diseño original de la academia, con la letra manuscrita y la
 firma en su lugar.
 
 ---
@@ -232,7 +232,7 @@ firma en su lugar.
 | Infraestructura | Laboratorio propio con KVM para desarrollar y probar; producción en la nube. Caso de estudio aparte: [infraestructura-druidatech](https://github.com/druidatech-net/infraestructura-druidatech) |
 
 El servidor cuesta menos de doce dólares por mes y aloja varios sitios a la vez.
-El costo no crece con la cantidad de alumnas.
+El costo no crece con la cantidad de alumnos.
 
 ---
 
@@ -252,11 +252,11 @@ código propio:
 | [`codigo/entrega-firmada.py`](codigo/entrega-firmada.py) | Extracto de la entrega de video: autorización por pedido y enlaces firmados que vencen |
 
 No incluye la plataforma de cursos, los pagos, el panel de administración ni nada
-que toque datos de alumnas.
+que toque datos de alumnos.
 
 Tampoco incluye las imágenes del sitio, y es a propósito. Las páginas legales
 llevan datos personales de identificación y domicilio. Las fotografías de
-testimonios son caras de alumnas reales, que dieron su permiso para aparecer en
+testimonios son caras de alumnos reales, que dieron su permiso para aparecer en
 la web y no para quedar en un repositorio que cualquiera puede copiar. Y algunas
 imágenes ilustrativas provienen de bancos de imágenes, cuya licencia permite
 usarlas en un sitio pero no redistribuir el archivo.

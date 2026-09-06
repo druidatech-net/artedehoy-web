@@ -6,7 +6,7 @@ Tres ideas, en orden:
 1. Los videos viven en un depósito privado (almacenamiento de objetos compatible
    con S3). No hay ninguna dirección pública fija a un video.
 2. Cada pedido pasa primero por la plataforma, que decide si quien pide tiene
-   derecho (está inscripta en ese curso). La misma regla vale para el video
+   derecho (está inscripto en ese curso). La misma regla vale para el video
    original y para cada lista de fragmentos del streaming adaptativo (HLS).
 3. Si tiene derecho, recibe un enlace firmado que vence a las 6 horas. Para HLS,
    la lista de fragmentos se reescribe al vuelo: cada fragmento sale con su propia
@@ -14,7 +14,7 @@ Tres ideas, en orden:
    pasar por el servidor web.
 
 Extracto simplificado del código en producción. Falta lo que depende del resto de
-la aplicación (modelos, sesión de la alumna), señalado en los comentarios.
+la aplicación (modelos, sesión de el alumno), señalado en los comentarios.
 """
 import boto3
 from flask import abort, current_app, redirect
@@ -106,7 +106,7 @@ def entregar_medio(rel):
         original = video_original_de(rel)
         if original is None:
             abort(404)
-        if not autorizado(original):             # ← ¿está inscripta en ese curso? (fuera del extracto)
+        if not autorizado(original):             # ← ¿está inscripto en ese curso? (fuera del extracto)
             abort(403)
         cuerpo = playlist_firmada(rel)
         if cuerpo is None:
@@ -127,5 +127,5 @@ def existe_en_la_base(ruta):
 
 
 def autorizado(ruta):
-    """¿La persona con sesión iniciada está inscripta en el curso de ese archivo?"""
+    """¿La persona con sesión iniciada está inscripto en el curso de ese archivo?"""
     raise NotImplementedError
